@@ -1,0 +1,83 @@
+﻿@page
+@model DeleteModel
+@{
+	ViewData["Title"] = "Delete Address Book Entry";
+}
+
+<style>
+	.validation-summary-valid {
+		display: none;
+	}
+</style>
+
+<h1>Address Book Entry Details</h1>
+
+<form asp-page="Delete"
+   method="post">
+	<span>@ViewData["Message"]</span>
+
+	<div asp-validation-summary="All"
+   class="validation-summary-errors">
+		<span>Please correct the following errors:</span>
+	</div>
+
+	<div class="form-group">
+		<span asp-for="DeleteAddressRequest.Id"></span>
+		<input asp-for="DeleteAddressRequest.Id"
+			   type="hidden" />
+	</div>
+	<div class="form-group">
+		<label asp-for="DeleteAddressRequest.Line1"></label>
+		<input asp-for="DeleteAddressRequest.Line1"
+			   type="text"
+	  class="form-control"
+	  id="line1"
+	  readonly="@true"
+	  placeholder="Line 1" />
+	</div>
+	<div class="form-group">
+		<label asp-for="DeleteAddressRequest.Line2"></label>
+		<input asp-for="DeleteAddressRequest.Line2"
+			   type="text"
+	  class="form-control"
+	  id="line2"
+	  readonly="@true"
+	  placeholder="Line 2" />
+	</div>
+	<div class="form-group">
+		<label asp-for="DeleteAddressRequest.City"></label>
+		<input asp-for="DeleteAddressRequest.City"
+			   type="text"
+	  class="form-control"
+	  id="City"
+	  readonly="@true"
+	  placeholder="City" />
+	</div>
+	<div class="form-group">
+		<label asp-for="DeleteAddressRequest.State"></label>
+		<input asp-for="DeleteAddressRequest.State"
+			   type="text"
+	  class="form-control"
+	  id="State"
+	  readonly="@true"
+	  placeholder="State" />
+	</div>
+	<div class="form-group">
+		<label asp-for="DeleteAddressRequest.PostalCode"></label>
+		<input asp-for="DeleteAddressRequest.PostalCode"
+			   type="text"
+	  class="form-control"
+	  readonly="@true"
+	  placeholder="Postal Code" />
+	</div>
+	<button type="submit"
+			class="btn btn-primary"
+			asp-page-handler="Delete">
+		Delete Address
+	</button>
+	<button type="submit"
+			class="btn btn-primary"
+			asp-page-handler="Cancel">
+		Cancel
+	</button>
+</form>

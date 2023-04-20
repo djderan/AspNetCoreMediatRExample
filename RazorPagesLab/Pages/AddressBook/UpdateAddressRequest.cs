@@ -6,7 +6,7 @@ using MediatR;
 namespace RazorPagesLab.Pages.AddressBook;
 
 public class UpdateAddressRequest
-	: IRequest
+	: IRequest<Guid>
 {
 	public Guid Id { get; set; }
 
